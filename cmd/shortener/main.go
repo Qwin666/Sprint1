@@ -28,8 +28,10 @@ func redirect(w http.ResponseWriter, r *http.Request) {
 	for key, v := range Bd {
 		if id == key {
 			http.Redirect(w, r, v, http.StatusFound)
+
 		}
 	}
+
 	http.NotFound(w, r)
 	return
 }
